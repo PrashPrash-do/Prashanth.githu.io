@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashanth S - Full-Stack Developer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4f46e5',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.gradient-bg {
+background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+}
+.gradient-text {
+background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.card-hover {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.social-icon {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+transform: scale(1.2);
+color: #4f46e5;
+}
+.skill-bar {
+height: 8px;
+border-radius: 4px;
+background: #e5e7eb;
+overflow: hidden;
+position: relative;
+}
+.skill-progress {
+height: 100%;
+border-radius: 4px;
+background: linear-gradient(90deg, #4f46e5 0%, #10b981 100%);
+transition: width 1s ease;
+}
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+input:focus + label,
+textarea:focus + label {
+transform: translateY(-24px) scale(0.8);
+color: #4f46e5;
+}
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+transform: translateY(-24px) scale(0.8);
+}
+label {
+transition: transform 0.3s ease, color 0.3s ease;
+transform-origin: 0 0;
+}
+.counter {
+transition: color 0.3s ease;
+}
+.counter:hover {
+color: #4f46e5;
+}
+.scroll-indicator {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-10px);
+}
+60% {
+transform: translateY(-5px);
+}
+}
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+.project-card:hover img {
+transform: scale(1.05);
+}
+.project-card img {
+transition: transform 0.5s ease;
+}
+.project-overlay {
+opacity: 0;
+transition: opacity 0.3s ease;
+background: rgba(79, 70, 229, 0.9);
+}
+.tech-tag {
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+.tech-tag:hover {
+background-color: #4f46e5;
+color: white;
+}
+.timeline-dot {
+transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+transform: scale(1.3);
+background-color: #4f46e5;
+}
+input[type="range"] {
+-webkit-appearance: none;
+width: 100%;
+height: 8px;
+border-radius: 4px;
+background: #e5e7eb;
+outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #4f46e5;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+background: #10b981;
+}
+.custom-checkbox {
+position: relative;
+width: 20px;
+height: 20px;
+border: 2px solid #e5e7eb;
+border-radius: 4px;
+transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.custom-checkbox.checked {
+background-color: #4f46e5;
+border-color: #4f46e5;
+}
+.custom-checkbox.checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+width: 50px;
+height: 24px;
+background-color: #e5e7eb;
+border-radius: 12px;
+transition: background-color 0.3s ease;
+}
+.custom-switch.active {
+background-color: #4f46e5;
+}
+.custom-switch::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 2px;
+width: 20px;
+height: 20px;
+background-color: white;
+border-radius: 50%;
+transition: transform 0.3s ease;
+}
+.custom-switch.active::after {
+transform: translateX(26px);
+}
+.custom-radio {
+position: relative;
+width: 20px;
+height: 20px;
+border: 2px solid #e5e7eb;
+border-radius: 50%;
+transition: border-color 0.3s ease;
+}
+.custom-radio.checked {
+border-color: #4f46e5;
+}
+.custom-radio.checked::after {
+content: '';
+position: absolute;
+top: 4px;
+left: 4px;
+width: 8px;
+height: 8px;
+background-color: #4f46e5;
+border-radius: 50%;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Prashanth</a>
+<div class="hidden md:flex space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+<a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(16, 185, 129, 0.9) 100%);">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-green-400 opacity-10"></div>
+<div class="container mx-auto px-4 py-20 text-center z-10 fade-in visible">
+<h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Prashanth S</h1>
+<h2 class="text-2xl md:text-3xl font-light text-white mb-8">Full-Stack Developer – MERN Stack</h2>
+<div class="flex justify-center space-x-6 mb-12">
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full text-white social-icon">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full text-white social-icon">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full text-white social-icon">
+<i class="ri-mail-fill ri-lg"></i>
+</a>
+</div>
+<a href="#about" class="inline-block text-white scroll-indicator">
+<i class="ri-arrow-down-line ri-2x"></i>
+</a>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+<div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div>
+<p class="text-lg text-gray-700 leading-relaxed mb-6">
+I'm a passionate Full-Stack Developer with over 1 year of experience in building scalable web applications. My expertise lies in the MERN stack (MongoDB, Express.js, React, Node.js), where I've developed robust solutions for various business needs.
+</p>
+<p class="text-lg text-gray-700 leading-relaxed mb-6">
+My approach combines technical excellence with a keen eye for user experience. I believe in writing clean, maintainable code that delivers real value to users and businesses alike.
+</p>
+<p class="text-lg text-gray-700 leading-relaxed">
+When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical blogs and community forums.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">My Skills</h2>
+<div class="w-full h-80 mb-16 bg-gray-900 rounded-lg shadow-xl overflow-hidden relative fade-in">
+  <div id="skills-galaxy" class="w-full h-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Frontend -->
+<div class="bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-code-s-slash-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Frontend</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">React.js</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">JavaScript</span>
+<span class="text-gray-500">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">HTML5 & CSS3</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Redux</span>
+<span class="text-gray-500">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Tailwind CSS</span>
+<span class="text-gray-500">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Backend -->
+<div class="bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg text-secondary mr-4">
+<i class="ri-server-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Backend</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Node.js</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Express.js</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">RESTful APIs</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">GraphQL</span>
+<span class="text-gray-500">70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Authentication</span>
+<span class="text-gray-500">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Databases -->
+<div class="bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-lg text-yellow-600 mr-4">
+<i class="ri-database-2-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Databases</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">MongoDB</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">MySQL</span>
+<span class="text-gray-500">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Firebase</span>
+<span class="text-gray-500">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Redis</span>
+<span class="text-gray-500">65%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Mongoose</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools -->
+<div class="bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-lg text-red-600 mr-4">
+<i class="ri-tools-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Tools</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Git & GitHub</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">VS Code</span>
+<span class="text-gray-500">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Postman</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">npm/Yarn</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Webpack</span>
+<span class="text-gray-500">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cloud/DevOps -->
+<div class="bg-white rounded-lg shadow-md p-8 card-hover fade-in">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-lg text-purple-600 mr-4">
+<i class="ri-cloud-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Cloud/DevOps</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">AWS</span>
+<span class="text-gray-500">70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Heroku</span>
+<span class="text-gray-500">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Netlify</span>
+<span class="text-gray-500">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Docker</span>
+<span class="text-gray-500">65%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">CI/CD</span>
+<span class="text-gray-500">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">My Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden project-card card-hover fade-in">
+<div class="relative h-56 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/1011fc3f7fa5f0fa12951add9fb20f68.jpg" alt="DevConnect" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 project-overlay flex items-center justify-center">
+<div class="text-center px-4">
+<div class="flex justify-center space-x-4 mb-4">
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">Live Demo</a>
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">DevConnect</h3>
+<p class="text-gray-700 mb-4">A social platform for developers to connect, share projects, and collaborate. Features include profiles, posts, comments, and direct messaging.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full tech-tag">React</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full tech-tag">Node.js</span>
+<span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full tech-tag">Express</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full tech-tag">MongoDB</span>
+<span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full tech-tag">Socket.io</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden project-card card-hover fade-in">
+<div class="relative h-56 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/5313b3d9a7f34cb678f7f0a439a9cd69.jpg" alt="TaskTrackr" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 project-overlay flex items-center justify-center">
+<div class="text-center px-4">
+<div class="flex justify-center space-x-4 mb-4">
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">Live Demo</a>
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">TaskTrackr</h3>
+<p class="text-gray-700 mb-4">A comprehensive task management application with Kanban boards, task assignments, due dates, and progress tracking features.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full tech-tag">React</span>
+<span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full tech-tag">Redux</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full tech-tag">Node.js</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full tech-tag">MongoDB</span>
+<span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full tech-tag">JWT</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden project-card card-hover fade-in">
+<div class="relative h-56 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/4f9f999a617d84c76958f27ffa782685.jpg" alt="eKart" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 project-overlay flex items-center justify-center">
+<div class="text-center px-4">
+<div class="flex justify-center space-x-4 mb-4">
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">Live Demo</a>
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">eKart</h3>
+<p class="text-gray-700 mb-4">A full-featured e-commerce platform with product listings, shopping cart, user authentication, and payment integration.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full tech-tag">React</span>
+<span class="bg-cyan-100 text-cyan-800 text-xs px-3 py-1 rounded-full tech-tag">Context API</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full tech-tag">Node.js</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full tech-tag">MongoDB</span>
+<span class="bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full tech-tag">Stripe</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden project-card card-hover fade-in">
+<div class="relative h-56 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f4140d382f9723c07bbe2cd6c881f9b2.jpg" alt="BlogVerse" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 project-overlay flex items-center justify-center">
+<div class="text-center px-4">
+<div class="flex justify-center space-x-4 mb-4">
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">Live Demo</a>
+<a href="#" class="bg-white text-primary rounded-full px-4 py-2 font-medium hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">BlogVerse</h3>
+<p class="text-gray-700 mb-4">A blogging platform with rich text editing, comments, likes, user profiles, and content categorization features.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full tech-tag">React</span>
+<span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full tech-tag">GraphQL</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full tech-tag">Node.js</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full tech-tag">MongoDB</span>
+<span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full tech-tag">AWS S3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Work Experience</h2>
+<div class="max-w-3xl mx-auto">
+<div class="relative pl-8 border-l-2 border-primary">
+<div class="mb-12 timeline-item fade-in">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary timeline-dot"></div>
+<div class="bg-white rounded-lg shadow-md p-6 card-hover">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+<h3 class="text-xl font-bold text-gray-800">Full-Stack Developer</h3>
+<div class="flex items-center mt-2 md:mt-0">
+<span class="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full">TechNova Solutions</span>
+<span class="mx-2 text-gray-400">•</span>
+<span class="text-sm text-gray-600">2023 - Present</span>
+</div>
+</div>
+<ul class="space-y-3 text-gray-700">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Developed and maintained multiple client projects using the MERN stack, resulting in a 30% increase in user engagement.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Implemented responsive designs and optimized frontend performance, improving page load times by 40%.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Designed and built RESTful APIs with Node.js and Express, ensuring secure authentication and data validation.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Collaborated with UX/UI designers to implement pixel-perfect interfaces and smooth user experiences.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Participated in code reviews and mentored junior developers, improving team code quality by 25%.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="mb-12 timeline-item fade-in">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary timeline-dot"></div>
+<div class="bg-white rounded-lg shadow-md p-6 card-hover">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+<h3 class="text-xl font-bold text-gray-800">Frontend Developer Intern</h3>
+<div class="flex items-center mt-2 md:mt-0">
+<span class="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full">WebSphere Technologies</span>
+<span class="mx-2 text-gray-400">•</span>
+<span class="text-sm text-gray-600">Jan 2023 - Jun 2023</span>
+</div>
+</div>
+<ul class="space-y-3 text-gray-700">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Assisted in developing user interfaces for web applications using React.js and CSS frameworks.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Implemented responsive designs and ensured cross-browser compatibility for client websites.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Collaborated with senior developers to troubleshoot and fix frontend bugs and issues.</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<p>Participated in daily stand-ups and sprint planning meetings, gaining experience in Agile methodologies.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Achievements</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white rounded-lg shadow-md p-6 text-center card-hover fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mx-auto mb-4">
+<i class="ri-code-box-line ri-xl"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2 counter">95%</h3>
+<p class="text-gray-700">Code Coverage</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 text-center card-hover fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full text-secondary mx-auto mb-4">
+<i class="ri-user-line ri-xl"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2 counter">500+</h3>
+<p class="text-gray-700">Monthly Active Users</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 text-center card-hover fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full text-yellow-600 mx-auto mb-4">
+<i class="ri-trophy-line ri-xl"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2 counter">2x</h3>
+<p class="text-gray-700">Employee of the Month</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 text-center card-hover fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-purple-100 rounded-full text-purple-600 mx-auto mb-4">
+<i class="ri-github-line ri-xl"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2 counter">200+</h3>
+<p class="text-gray-700">GitHub Contributions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section id="education" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Education & Certifications</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-lg shadow-md p-6 card-hover fade-in">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-graduation-cap-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold">Education</h3>
+</div>
+<div class="space-y-6">
+<div class="border-l-2 border-primary pl-4 py-1">
+<h4 class="text-lg font-semibold mb-1">B.Tech in Computer Science</h4>
+<p class="text-gray-600 mb-1">National Institute of Technology</p>
+<p class="text-sm text-gray-500">2019 - 2023</p>
+<p class="mt-2 text-gray-700">Graduated with distinction, focusing on web technologies and software engineering.</p>
+</div>
+<div class="border-l-2 border-primary pl-4 py-1">
+<h4 class="text-lg font-semibold mb-1">Higher Secondary Education</h4>
+<p class="text-gray-600 mb-1">St. Joseph's College</p>
+<p class="text-sm text-gray-500">2017 - 2019</p>
+<p class="mt-2 text-gray-700">Specialized in Computer Science with Mathematics and Physics.</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6 card-hover fade-in">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg text-secondary mr-4">
+<i class="ri-award-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold">Certifications</h3>
+</div>
+<div class="space-y-6">
+<div class="border-l-2 border-secondary pl-4 py-1">
+<h4 class="text-lg font-semibold mb-1">Udacity Full-Stack Nanodegree</h4>
+<p class="text-gray-600 mb-1">Udacity</p>
+<p class="text-sm text-gray-500">2022</p>
+<p class="mt-2 text-gray-700">Comprehensive program covering frontend and backend development, databases, and deployment.</p>
+</div>
+<div class="border-l-2 border-secondary pl-4 py-1">
+<h4 class="text-lg font-semibold mb-1">MongoDB Developer Course</h4>
+<p class="text-gray-600 mb-1">MongoDB University</p>
+<p class="text-sm text-gray-500">2023</p>
+<p class="mt-2 text-gray-700">Advanced database design, querying, and optimization techniques for MongoDB.</p>
+</div>
+<div class="border-l-2 border-secondary pl-4 py-1">
+<h4 class="text-lg font-semibold mb-1">AWS Certified Developer - Associate</h4>
+<p class="text-gray-600 mb-1">Amazon Web Services</p>
+<p class="text-sm text-gray-500">2023</p>
+<p class="mt-2 text-gray-700">Cloud services, serverless architecture, and deployment strategies on AWS.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="fade-in">
+<h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Location</h4>
+<p class="text-gray-700">Bangalore, Karnataka, India</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-lg text-secondary mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Email</h4>
+<a href="mailto:prashanth.dev@example.com" class="text-gray-700 hover:text-primary transition-colors">prashanth.dev@example.com</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-lg text-purple-600 mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Phone</h4>
+<a href="tel:+919876543210" class="text-gray-700 hover:text-primary transition-colors">+91 98765 43210</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-lg text-yellow-600 mr-4">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Working Hours</h4>
+<p class="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-lg font-bold mb-4">Connect With Me</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg text-gray-700 hover:bg-primary hover:text-white transition-colors social-icon">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg text-gray-700 hover:bg-primary hover:text-white transition-colors social-icon">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg text-gray-700 hover:bg-primary hover:text-white transition-colors social-icon">
+<i class="ri-twitter-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg text-gray-700 hover:bg-primary hover:text-white transition-colors social-icon">
+<i class="ri-instagram-fill ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md p-8 fade-in">
+<h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="relative">
+<input type="text" id="name" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none bg-transparent">
+<label for="name" class="absolute left-4 top-3 text-gray-500 pointer-events-none">Name</label>
+</div>
+<div class="relative">
+<input type="email" id="email" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none bg-transparent">
+<label for="email" class="absolute left-4 top-3 text-gray-500 pointer-events-none">Email</label>
+</div>
+</div>
+<div class="mb-6">
+<div class="relative">
+<input type="text" id="subject" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none bg-transparent">
+<label for="subject" class="absolute left-4 top-3 text-gray-500 pointer-events-none">Subject</label>
+</div>
+</div>
+<div class="mb-6">
+<div class="relative">
+<textarea id="message" rows="5" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none bg-transparent"></textarea>
+<label for="message" class="absolute left-4 top-3 text-gray-500 pointer-events-none">Message</label>
+</div>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-8 bg-gray-900 text-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<a href="#" class="text-2xl font-['Pacifico'] text-white">Prashanth</a>
+</div>
+<div class="text-center md:text-right">
+<p class="text-gray-400">© 2025 Prashanth S. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Fade-in animation
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, {
+threshold: 0.1
+});
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+// 3D Skills Galaxy
+function initSkillsGalaxy() {
+  const container = document.getElementById('skills-galaxy');
+  if (!container) return;
+  
+  // Scene setup
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(0x111827, 1);
+  container.appendChild(renderer.domElement);
+  
+  // Camera position
+  camera.position.z = 30;
+  
+  // Skills data with colors
+  const skills = [
+    { name: "JavaScript", color: 0xf7df1e, size: 2.5 },
+    { name: "React", color: 0x61dafb, size: 2.5 },
+    { name: "Node.js", color: 0x68a063, size: 2.5 },
+    { name: "MongoDB", color: 0x4db33d, size: 2.2 },
+    { name: "Express", color: 0xffffff, size: 2.0 },
+    { name: "HTML5", color: 0xe34f26, size: 2.0 },
+    { name: "CSS3", color: 0x1572b6, size: 2.0 },
+    { name: "Redux", color: 0x764abc, size: 1.8 },
+    { name: "GraphQL", color: 0xe535ab, size: 1.8 },
+    { name: "TypeScript", color: 0x3178c6, size: 1.8 },
+    { name: "Git", color: 0xf05032, size: 1.7 },
+    { name: "AWS", color: 0xff9900, size: 1.7 },
+    { name: "Tailwind", color: 0x38b2ac, size: 1.7 },
+    { name: "Firebase", color: 0xffca28, size: 1.6 },
+    { name: "Docker", color: 0x2496ed, size: 1.6 },
+    { name: "Jest", color: 0xc21325, size: 1.5 },
+    { name: "Webpack", color: 0x8dd6f9, size: 1.5 },
+    { name: "MySQL", color: 0x4479a1, size: 1.5 },
+    { name: "Redis", color: 0xdc382d, size: 1.4 },
+    { name: "Sass", color: 0xcc6699, size: 1.4 }
+  ];
+  
+  // Create text sprites and spheres for each skill
+  const nodes = [];
+  const fontFace = "Arial";
+  
+  skills.forEach(skill => {
+    // Create sphere
+    const geometry = new THREE.SphereGeometry(skill.size, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ 
+      color: skill.color,
+      transparent: true,
+      opacity: 0.7
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+    
+    // Random position in a spherical formation
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const radius = 15 + Math.random() * 10;
+    
+    sphere.position.x = radius * Math.sin(phi) * Math.cos(theta);
+    sphere.position.y = radius * Math.sin(phi) * Math.sin(theta);
+    sphere.position.z = radius * Math.cos(phi);
+    
+    // Add velocity for animation
+    sphere.userData = {
+      velocity: new THREE.Vector3(
+        (Math.random() - 0.5) * 0.05,
+        (Math.random() - 0.5) * 0.05,
+        (Math.random() - 0.5) * 0.05
+      ),
+      name: skill.name
+    };
+    
+    scene.add(sphere);
+    nodes.push(sphere);
+  });
+  
+  // Add ambient light
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  scene.add(ambientLight);
+  
+  // Add point light
+  const pointLight = new THREE.PointLight(0x4f46e5, 1, 100);
+  pointLight.position.set(0, 0, 20);
+  scene.add(pointLight);
+  
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    // Rotate camera slowly around the scene
+    camera.position.x = 30 * Math.sin(Date.now() * 0.0001);
+    camera.position.z = 30 * Math.cos(Date.now() * 0.0001);
+    camera.lookAt(scene.position);
+    
+    // Move nodes
+    nodes.forEach(node => {
+      node.position.add(node.userData.velocity);
+      
+      // Boundary check and bounce
+      ['x', 'y', 'z'].forEach(axis => {
+        if (Math.abs(node.position[axis]) > 25) {
+          node.userData.velocity[axis] *= -1;
+        }
+      });
+      
+      // Slow rotation
+      node.rotation.x += 0.005;
+      node.rotation.y += 0.005;
+    });
+    
+    renderer.render(scene, camera);
+  }
+  
+  // Handle window resize
+  function onWindowResize() {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  }
+  
+  window.addEventListener('resize', onWindowResize, false);
+  
+  // Start animation
+  animate();
+}
+// Initialize the galaxy when the skills section is visible
+const skillsSection = document.getElementById('skills');
+if (skillsSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        initSkillsGalaxy();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(skillsSection);
+}
+// Mobile menu toggle
+const menuButton = document.querySelector('button');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 flex flex-col items-center justify-center transform translate-y-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="flex flex-col space-y-6 text-xl">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+<a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+const closeButton = mobileMenu.querySelector('button');
+menuButton.addEventListener('click', () => {
+mobileMenu.classList.remove('translate-y-full');
+document.body.style.overflow = 'hidden';
+});
+closeButton.addEventListener('click', () => {
+mobileMenu.classList.add('translate-y-full');
+document.body.style.overflow = '';
+});
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('translate-y-full');
+document.body.style.overflow = '';
+});
+});
+// Custom checkbox functionality
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('click', () => {
+checkbox.classList.toggle('checked');
+});
+});
+// Custom switch functionality
+const switches = document.querySelectorAll('.custom-switch');
+switches.forEach(switchEl => {
+switchEl.addEventListener('click', () => {
+switchEl.classList.toggle('active');
+});
+});
+// Custom radio functionality
+const radios = document.querySelectorAll('.custom-radio');
+radios.forEach(radio => {
+radio.addEventListener('click', () => {
+const name = radio.getAttribute('data-name');
+document.querySelectorAll(`.custom-radio[data-name="${name}"]`).forEach(r => {
+r.classList.remove('checked');
+});
+radio.classList.add('checked');
+});
+});
+// Form label animation
+const formInputs = document.querySelectorAll('input, textarea');
+formInputs.forEach(input => {
+input.addEventListener('focus', () => {
+const label = input.nextElementSibling;
+label.style.transform = 'translateY(-24px) scale(0.8)';
+label.style.color = '#4f46e5';
+});
+input.addEventListener('blur', () => {
+const label = input.nextElementSibling;
+if (input.value === '') {
+label.style.transform = '';
+label.style.color = '';
+}
+});
+// Check initial state
+if (input.value !== '') {
+const label = input.nextElementSibling;
+label.style.transform = 'translateY(-24px) scale(0.8)';
+}
+});
+});
+</script>
+</body>
+</html>
